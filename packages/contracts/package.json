@@ -1,0 +1,21 @@
+{
+  "name": "@experts/contracts",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "generate": "openapi-typescript openapi/openapi.yaml -o src/generated.ts",
+    "lint": "biome check src openapi",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "node -e \"console.log('No tests in @experts/contracts')\""
+  },
+  "dependencies": {
+    "openapi-fetch": "^0.13.8"
+  },
+  "devDependencies": {
+    "openapi-typescript": "^7.8.0"
+  }
+}

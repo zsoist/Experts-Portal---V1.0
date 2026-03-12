@@ -1,0 +1,268 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ExpertStatus {
+  active
+  pending_verification
+  restricted
+  suspended
+}
+
+enum VerificationStatus {
+  not_started
+  pending
+  completed
+  failed
+  expired
+}
+
+enum OpportunityStatus {
+  invited
+  screening_in_progress
+  accepted
+  declined
+  slot_proposed
+  scheduled
+  completed
+  payment_pending
+  paid
+  held
+}
+
+enum BookingStatus {
+  proposed
+  scheduled
+  completed
+  cancelled
+  no_show
+}
+
+enum PaymentStatus {
+  not_eligible
+  pending_request
+  requested_external
+  submitted
+  approved
+  paid
+  held
+}
+
+model Expert {
+  id                  String                  @id @default(uuid()) @db.Uuid
+  email               String                  @unique
+  status              ExpertStatus
+  verificationStatus  VerificationStatus      @default(not_started)
+  personaInquiryId    String?
+  createdAt           DateTime                @default(now())
+  updatedAt           DateTime                @updatedAt
+  profile             ExpertProfile?
+  recencySignals      RecencySignal[]
+  availabilityRules   AvailabilityRule[]
+  timeSlotHolds       TimeSlotHold[]
+  bookings            Booking[]
+  complianceFlags     ComplianceFlag[]
+  attestations        ComplianceAttestation[]
+  payoutProfile       PayoutProfile?
+  paymentRecords      PaymentRecord[]
+  auditEvents         AuditEvent[]            @relation("ExpertAuditEvents")
+  opportunityLinks    OpportunityCandidate[]
+}
+
+model ExpertProfile {
+  expertId          String   @id @db.Uuid
+  expert            Expert   @relation(fields: [expertId], references: [id], onDelete: Cascade)
+  fullName          String
+  headline          String
+  timezone          String
+  expertiseTags     Json
+  roleHistory       Json
+  lastConfirmedAt   DateTime
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+model RecencySignal {
+  id              String   @id @default(uuid()) @db.Uuid
+  expertId        String   @db.Uuid
+  expert          Expert   @relation(fields: [expertId], references: [id], onDelete: Cascade)
+  topic           String
+  lastHandsOnDate DateTime
+  confidence      Decimal  @db.Decimal(3, 2)
+  source          String
+  createdAt       DateTime @default(now())
+}
+
+model Opportunity {
+  id                  String                 @id @default(uuid()) @db.Uuid
+  title               String
+  topic               String
+  description         String
+  status              OpportunityStatus
+  deadlineAt          DateTime
+  estimatedMinutes    Int
+  rateUsd             Int
+  complianceFlagsJson Json
+  createdAt           DateTime               @default(now())
+  updatedAt           DateTime               @updatedAt
+  screeningQuestions  ScreeningQuestion[]
+  candidates          OpportunityCandidate[]
+  bookings            Booking[]
+  complianceFlags     ComplianceFlag[]
+  auditEvents         AuditEvent[]           @relation("OpportunityAuditEvents")
+}
+
+model OpportunityCandidate {
+  id            String     @id @default(uuid()) @db.Uuid
+  opportunityId String     @db.Uuid
+  expertId      String     @db.Uuid
+  opportunity   Opportunity @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
+  expert        Expert     @relation(fields: [expertId], references: [id], onDelete: Cascade)
+  createdAt     DateTime   @default(now())
+
+  @@unique([opportunityId, expertId])
+}
+
+model ScreeningQuestion {
+  id            String        @id @default(uuid()) @db.Uuid
+  opportunityId String        @db.Uuid
+  prompt        String
+  required      Boolean       @default(true)
+  opportunity   Opportunity   @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
+  answers       ScreeningAnswer[]
+}
+
+model ScreeningAnswer {
+  id                   String              @id @default(uuid()) @db.Uuid
+  screeningQuestionId  String              @db.Uuid
+  opportunityCandidateId String?           @db.Uuid
+  answerText           String
+  version              Int
+  submittedAt          DateTime
+  screeningQuestion    ScreeningQuestion   @relation(fields: [screeningQuestionId], references: [id], onDelete: Cascade)
+}
+
+model AvailabilityRule {
+  id            String   @id @default(uuid()) @db.Uuid
+  expertId      String   @db.Uuid
+  expert        Expert   @relation(fields: [expertId], references: [id], onDelete: Cascade)
+  timezone      String
+  weekday       Int
+  startTime     String
+  endTime       String
+  leadHours     Int
+  blackoutDates Json
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model TimeSlotHold {
+  id            String   @id @default(uuid()) @db.Uuid
+  expertId      String   @db.Uuid
+  expert        Expert   @relation(fields: [expertId], references: [id], onDelete: Cascade)
+  opportunityId String?  @db.Uuid
+  startsAt      DateTime
+  endsAt        DateTime
+  status        String
+  createdAt     DateTime @default(now())
+}
+
+model Booking {
+  id            String        @id @default(uuid()) @db.Uuid
+  opportunityId String        @db.Uuid
+  expertId      String        @db.Uuid
+  title         String
+  startAt       DateTime
+  endAt         DateTime
+  timezone      String
+  status        BookingStatus
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  opportunity   Opportunity   @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
+  expert        Expert        @relation(fields: [expertId], references: [id], onDelete: Cascade)
+  paymentRecord PaymentRecord?
+  auditEvents   AuditEvent[]  @relation("BookingAuditEvents")
+}
+
+model ComplianceRule {
+  id            String                  @id @default(uuid()) @db.Uuid
+  name          String
+  ruleType      String
+  description   String
+  blocking      Boolean                 @default(true)
+  createdAt     DateTime                @default(now())
+  updatedAt     DateTime                @updatedAt
+  attestations  ComplianceAttestation[]
+  flags         ComplianceFlag[]
+}
+
+model ComplianceAttestation {
+  id            String          @id @default(uuid()) @db.Uuid
+  expertId      String          @db.Uuid
+  complianceRuleId String       @db.Uuid
+  accepted      Boolean
+  createdAt     DateTime        @default(now())
+  expert        Expert          @relation(fields: [expertId], references: [id], onDelete: Cascade)
+  complianceRule ComplianceRule @relation(fields: [complianceRuleId], references: [id], onDelete: Cascade)
+}
+
+model ComplianceFlag {
+  id               String          @id @default(uuid()) @db.Uuid
+  expertId         String?         @db.Uuid
+  opportunityId    String?         @db.Uuid
+  complianceRuleId String?         @db.Uuid
+  reason           String
+  createdAt        DateTime        @default(now())
+  expert           Expert?         @relation(fields: [expertId], references: [id], onDelete: Cascade)
+  opportunity      Opportunity?    @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
+  complianceRule   ComplianceRule? @relation(fields: [complianceRuleId], references: [id], onDelete: SetNull)
+}
+
+model PayoutProfile {
+  expertId         String   @id @db.Uuid
+  expert           Expert   @relation(fields: [expertId], references: [id], onDelete: Cascade)
+  provider         String
+  providerRef      String?
+  status           String
+  externalSetupUrl String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model PaymentRecord {
+  id                String        @id @default(uuid()) @db.Uuid
+  expertId          String        @db.Uuid
+  bookingId         String?       @unique @db.Uuid
+  engagementId      String
+  status            PaymentStatus
+  amountUsd         Int
+  dueAt             DateTime
+  payoutLinkIssued  Boolean       @default(false)
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+  expert            Expert        @relation(fields: [expertId], references: [id], onDelete: Cascade)
+  booking           Booking?      @relation(fields: [bookingId], references: [id], onDelete: SetNull)
+}
+
+model AuditEvent {
+  id            String      @id @default(uuid()) @db.Uuid
+  actorType     String
+  actorId       String?     @db.Uuid
+  action        String
+  entityType    String
+  entityId      String      @db.Uuid
+  payload       Json
+  createdAt     DateTime    @default(now())
+  expertId      String?     @db.Uuid
+  opportunityId String?     @db.Uuid
+  bookingId     String?     @db.Uuid
+  expert        Expert?     @relation("ExpertAuditEvents", fields: [expertId], references: [id], onDelete: SetNull)
+  opportunity   Opportunity? @relation("OpportunityAuditEvents", fields: [opportunityId], references: [id], onDelete: SetNull)
+  booking       Booking?    @relation("BookingAuditEvents", fields: [bookingId], references: [id], onDelete: SetNull)
+}
+

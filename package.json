@@ -1,0 +1,26 @@
+{
+  "name": "experts-portal-v1",
+  "private": true,
+  "packageManager": "pnpm@10.28.2",
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev --parallel",
+    "lint": "turbo lint",
+    "typecheck": "turbo typecheck",
+    "test": "turbo test",
+    "test:e2e": "playwright test",
+    "gen:contracts": "pnpm --filter @experts/contracts generate",
+    "db:generate": "pnpm --filter @experts/api prisma:generate",
+    "db:migrate:dev": "pnpm --filter @experts/api prisma:migrate:dev",
+    "format": "biome format --write ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@playwright/test": "^1.53.0",
+    "turbo": "^2.5.5",
+    "typescript": "^5.8.3"
+  }
+}
