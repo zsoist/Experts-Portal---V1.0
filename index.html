@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Overview — Expert Portal</title>
-  <meta name="description" content="A unified portal for expert workflow, compliance, and operational visibility. Product concept demo."/>
+  <meta name="description" content="A unified portal for Dialectica's expert network. Product concept demo for workflow visibility, compliance gating, scheduling, and payment clarity."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,6 +12,8 @@
 </head>
 <body>
 <div class="page-wrapper">
+
+  <!-- 1. STICKY NAV -->
   <nav class="nav">
     <div class="container">
       <a href="/Experts-Portal---V1.0/" class="nav-brand">
@@ -19,103 +21,101 @@
         Expert Portal
         <span class="nav-demo-badge">Concept Demo</span>
       </a>
-      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle navigation">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
-      </button>
       <ul class="nav-links">
         <li><a href="/Experts-Portal---V1.0/" class="nav-link active">Overview</a></li>
         <li><a href="/Experts-Portal---V1.0/workspace/" class="nav-link">Workspace</a></li>
         <li><a href="/Experts-Portal---V1.0/profile/" class="nav-link">Profile</a></li>
         <li><a href="/Experts-Portal---V1.0/availability/" class="nav-link">Availability</a></li>
-        <li><a href="/Experts-Portal---V1.0/projects/" class="nav-link">Pipeline</a></li>
-        <li><a href="/Experts-Portal---V1.0/ops-demo/" class="nav-link">Ops View</a></li>
+        <li><a href="/Experts-Portal---V1.0/projects/" class="nav-link">Projects</a></li>
+        <li><a href="/Experts-Portal---V1.0/ops-demo/" class="nav-link">Ops Demo</a></li>
       </ul>
     </div>
   </nav>
+
   <div class="page-content">
 
-    <!-- HERO -->
+    <!-- 2. HERO -->
     <section class="hero">
       <div class="container">
-        <p class="label label-accent mb-sm animate-in">Product Concept &middot; Expert Supply</p>
-        <h1 class="animate-in animate-delay-1">A unified portal for expert workflow, compliance, and operational visibility</h1>
-        <p class="subtitle animate-in animate-delay-2">This demo illustrates how a single portal can consolidate opportunity intake, profile management, scheduling, compliance gating, and payment tracking &mdash; while preserving internal operational control and override capability.</p>
-        <div class="hero-metrics animate-in animate-delay-3">
+        <p class="label label-accent mb-sm">PRODUCT CONCEPT DEMO</p>
+        <h1>A unified portal for Dialectica&rsquo;s expert network</h1>
+        <p class="subtitle">This demo explains how a single expert-facing product could consolidate workflow visibility, compliance gating, scheduling, and payment clarity.</p>
+        <div class="hero-metrics">
           <div class="card metric-card">
-            <div class="metric-value">&lt;5 min</div>
+            <div class="metric-value">&lt; 5 min</div>
             <div class="metric-label">Target response time from opportunity to expert action</div>
           </div>
           <div class="card metric-card">
             <div class="metric-value">90 days</div>
-            <div class="metric-label">Maximum profile freshness window before re-confirmation</div>
+            <div class="metric-label">Profile freshness cadence before re-confirmation is required</div>
           </div>
           <div class="card metric-card">
             <div class="metric-value">100%</div>
-            <div class="metric-label">Compliance gate coverage before scheduling</div>
+            <div class="metric-label">Compliance gate coverage enforced before scheduling</div>
           </div>
           <div class="card metric-card">
-            <div class="metric-value">1</div>
-            <div class="metric-label">Unified view replacing email, docs, and manual coordination</div>
+            <div class="metric-value">$450/hr</div>
+            <div class="metric-label">Sample rate visibility shown to experts upfront</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- WHY THIS EXISTS -->
+    <!-- 3. WHY THIS EXISTS -->
     <section class="section">
       <div class="container">
         <div class="section-header">
-          <p class="label label-accent">The Problem</p>
+          <p class="label label-accent">Why this exists</p>
           <h2>Expert workflows are fragmented across email, documents, and manual coordination</h2>
         </div>
         <div class="comparison-row">
           <div class="comparison-before">
-            <p class="comparison-label">Current state</p>
+            <p class="comparison-label">Before</p>
             <p class="comparison-text">Opportunity outreach happens via email with no structured response tracking. Experts may miss invitations or lack context to respond quickly.</p>
           </div>
           <div class="comparison-after">
-            <p class="comparison-label">With portal</p>
+            <p class="comparison-label">After</p>
             <p class="comparison-text">Opportunities appear in a unified workspace with full brief, compliance flags, and screening questions &mdash; enabling sub-5-minute response.</p>
           </div>
         </div>
         <div class="comparison-row">
           <div class="comparison-before">
-            <p class="comparison-label">Current state</p>
+            <p class="comparison-label">Before</p>
             <p class="comparison-text">Profile information decays silently. There is no systematic signal for when expertise data becomes stale or unreliable.</p>
           </div>
           <div class="comparison-after">
-            <p class="comparison-label">With portal</p>
+            <p class="comparison-label">After</p>
             <p class="comparison-text">Profile freshness is tracked explicitly with recency signals, confidence scores, and re-confirmation prompts within a 90-day window.</p>
           </div>
         </div>
         <div class="comparison-row">
           <div class="comparison-before">
-            <p class="comparison-label">Current state</p>
+            <p class="comparison-label">Before</p>
             <p class="comparison-text">Scheduling requires manual back-and-forth over email, often delayed by timezone confusion and missing availability data.</p>
           </div>
           <div class="comparison-after">
-            <p class="comparison-label">With portal</p>
+            <p class="comparison-label">After</p>
             <p class="comparison-text">Experts define availability rules with timezone and lead-time preferences. Scheduling is gated on compliance completion.</p>
           </div>
         </div>
         <div class="comparison-row">
           <div class="comparison-before">
-            <p class="comparison-label">Current state</p>
+            <p class="comparison-label">Before</p>
             <p class="comparison-text">Payment status is opaque to experts, generating support tickets and eroding trust after completed engagements.</p>
           </div>
           <div class="comparison-after">
-            <p class="comparison-label">With portal</p>
+            <p class="comparison-label">After</p>
             <p class="comparison-text">Payment status is visible in the expert pipeline &mdash; pending, approved, and paid states reduce support friction to near zero.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- WHAT THE PORTAL CENTRALIZES -->
+    <!-- 4. SEVEN PILLARS -->
     <section class="section">
       <div class="container">
         <div class="section-header">
-          <p class="label label-accent">What the portal centralizes</p>
+          <p class="label label-accent">Seven pillars</p>
           <h2>Seven operational surfaces in a single expert experience</h2>
         </div>
         <div class="pillar-list">
@@ -124,7 +124,7 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
             </div>
             <div class="pillar-content">
-              <h4>Opportunity clarity</h4>
+              <h4>Opportunity Clarity</h4>
               <p class="body-sm">Structured opportunity briefs with scope, rate, deadline, and compliance flags replace unstructured email outreach.</p>
             </div>
           </div>
@@ -133,7 +133,7 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
             </div>
             <div class="pillar-content">
-              <h4>Profile freshness</h4>
+              <h4>Profile Freshness</h4>
               <p class="body-sm">Recency signals, confidence scores, and re-confirmation workflows keep expertise data current and reliable.</p>
             </div>
           </div>
@@ -142,7 +142,7 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
             </div>
             <div class="pillar-content">
-              <h4>Availability control</h4>
+              <h4>Availability Control</h4>
               <p class="body-sm">Rule-based availability with timezone, lead-time, and blackout preferences replaces per-request scheduling negotiation.</p>
             </div>
           </div>
@@ -151,7 +151,7 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
             <div class="pillar-content">
-              <h4>Compliance visibility</h4>
+              <h4>Compliance Visibility</h4>
               <p class="body-sm">Attestation, conflict-of-interest checks, and MNPI flags are surfaced before scheduling &mdash; not discovered after.</p>
             </div>
           </div>
@@ -160,7 +160,7 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
             </div>
             <div class="pillar-content">
-              <h4>Project pipeline transparency</h4>
+              <h4>Pipeline Transparency</h4>
               <p class="body-sm">Experts see where each engagement stands &mdash; from invitation through completion &mdash; without needing to ask.</p>
             </div>
           </div>
@@ -169,7 +169,7 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 10h20"/></svg>
             </div>
             <div class="pillar-content">
-              <h4>Payment clarity</h4>
+              <h4>Payment Clarity</h4>
               <p class="body-sm">Payment states &mdash; pending, approved, paid &mdash; are visible to experts, eliminating post-engagement support friction.</p>
             </div>
           </div>
@@ -178,7 +178,7 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
             </div>
             <div class="pillar-content">
-              <h4>Operational control layer</h4>
+              <h4>Ops Control Layer</h4>
               <p class="body-sm">Internal teams retain override capability, audit trails, and governance controls. Self-service does not mean uncontrolled.</p>
             </div>
           </div>
@@ -186,11 +186,11 @@
       </div>
     </section>
 
-    <!-- EXPERT JOURNEY -->
+    <!-- 5. EXPERT JOURNEY -->
     <section class="section">
       <div class="container">
         <div class="section-header">
-          <p class="label label-accent">Expert lifecycle</p>
+          <p class="label label-accent">Expert journey</p>
           <h2>A clear path from opportunity to payment</h2>
         </div>
         <div class="card mb-xl">
@@ -225,7 +225,7 @@
       </div>
     </section>
 
-    <!-- KEY SURFACES -->
+    <!-- 6. KEY SURFACES -->
     <section class="section">
       <div class="container">
         <div class="section-header">
@@ -250,24 +250,24 @@
           </a>
           <a href="/Experts-Portal---V1.0/projects/" class="card card-interactive">
             <p class="label label-accent mb-sm">Expert Surface</p>
-            <h3 class="mb-sm">Pipeline</h3>
+            <h3 class="mb-sm">Projects</h3>
             <p class="body-sm">Project pipeline with engagement status tracking from invitation through payment completion.</p>
           </a>
           <a href="/Experts-Portal---V1.0/ops-demo/" class="card card-interactive card-ops">
             <p class="label" style="color: var(--ops-accent);">Ops Surface</p>
-            <h3 class="mb-sm mt-sm">Ops View</h3>
-            <p class="body-sm">Operations command center with verification, compliance gates, finance queue, and audit trail.</p>
+            <h3 class="mb-sm mt-sm">Ops Demo</h3>
+            <p class="body-sm">Operations command center with verification queues, compliance gates, finance controls, and audit trail.</p>
           </a>
-          <div class="card" style="border-style: dashed;">
-            <p class="label mb-sm">Future State</p>
-            <h3 class="mb-sm">Payments</h3>
-            <p class="body-sm">Dedicated payment history, invoicing, and tax document management. Currently surfaced within the pipeline view.</p>
-          </div>
+          <a href="/Experts-Portal---V1.0/ops-demo/" class="card card-interactive card-ops">
+            <p class="label" style="color: var(--ops-accent);">Ops Surface</p>
+            <h3 class="mb-sm mt-sm">Expert Detail</h3>
+            <p class="body-sm">Individual expert record view with profile data, compliance history, engagement timeline, and operational overrides.</p>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- DESIGN DECISIONS -->
+    <!-- 7. DESIGN DECISIONS -->
     <section class="section">
       <div class="container">
         <div class="section-header">
@@ -282,60 +282,51 @@
             <p><strong>Profile freshness is explicit.</strong> Rather than assuming profile data remains valid indefinitely, the system tracks recency signals with confidence scores and prompts re-confirmation within a 90-day window.</p>
           </div>
           <div class="decision-block">
-            <p><strong>Payment visibility is included.</strong> Experts see payment status (pending, approved, paid) to reduce post-engagement support tickets. Transparency builds trust without exposing internal financial operations.</p>
+            <p><strong>Payment visibility reduces friction.</strong> Experts see payment status (pending, approved, paid) to reduce post-engagement support tickets. Transparency builds trust without exposing internal financial operations.</p>
           </div>
           <div class="decision-block">
             <p><strong>Availability as rules, not dates.</strong> Experts define recurring windows with timezone and lead-time preferences rather than picking individual slots. This reduces coordination overhead while keeping a conservative v1 boundary.</p>
-          </div>
-          <div class="decision-block">
-            <p><strong>Ops override preserved.</strong> The operations layer retains full override capability for exceptions and governance. Self-service empowers experts but does not remove internal control.</p>
-          </div>
-          <div class="decision-block">
-            <p><strong>AI conservative by design.</strong> AI-assisted features (matching, screening analysis) are scoped to assist, not automate. Human judgment remains the final decision layer for compliance and scheduling.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- DEMO LIMITATIONS -->
+    <!-- 8. DEMO SCOPE -->
     <section class="section">
       <div class="container">
         <div class="section-header">
           <p class="label label-accent">Demo scope</p>
-          <h2>What is mocked, conceptual, and future-state</h2>
+          <h2>What is implemented, mocked, and future-state</h2>
         </div>
         <div class="grid-3">
           <div class="card card-sm">
             <span class="badge badge-success badge-dot mb-md">Implemented</span>
             <ul class="flex flex-col gap-sm mt-md" style="list-style: none;">
-              <li class="body-sm">Workspace overview with opportunity cards</li>
-              <li class="body-sm">Profile form with recency signals</li>
-              <li class="body-sm">Availability rules and scheduling readiness</li>
-              <li class="body-sm">Project pipeline with status tracking</li>
+              <li class="body-sm">Seeded illustrative data across all surfaces</li>
+              <li class="body-sm">Static HTML + CSS surfaces with no build system</li>
+              <li class="body-sm">Compliance gates enforced before scheduling</li>
+              <li class="body-sm">Profile freshness and recency signals</li>
               <li class="body-sm">Ops command center with override controls</li>
-              <li class="body-sm">Expert detail record in ops console</li>
             </ul>
           </div>
           <div class="card card-sm">
             <span class="badge badge-warning badge-dot mb-md">Mocked</span>
             <ul class="flex flex-col gap-sm mt-md" style="list-style: none;">
-              <li class="body-sm">Screening question submission</li>
-              <li class="body-sm">Compliance attestation recording</li>
-              <li class="body-sm">Payment approval workflow</li>
-              <li class="body-sm">Profile update persistence</li>
-              <li class="body-sm">Availability rule saving</li>
+              <li class="body-sm">WorkOS SSO authentication flow</li>
+              <li class="body-sm">Persona identity verification</li>
+              <li class="body-sm">Payment provider integration</li>
+              <li class="body-sm">Form submissions and data persistence</li>
               <li class="body-sm">Audit trail event generation</li>
             </ul>
           </div>
           <div class="card card-sm">
-            <span class="badge badge-default badge-dot mb-md">Future-state</span>
+            <span class="badge badge-default badge-dot mb-md">Future</span>
             <ul class="flex flex-col gap-sm mt-md" style="list-style: none;">
-              <li class="body-sm">Calendar integration (Google, Outlook)</li>
-              <li class="body-sm">AI-assisted expert matching</li>
-              <li class="body-sm">Document upload and management</li>
-              <li class="body-sm">Multi-language support</li>
-              <li class="body-sm">Dedicated payments and invoicing surface</li>
+              <li class="body-sm">Calendar sync (Google, Outlook)</li>
               <li class="body-sm">Real-time notification system</li>
+              <li class="body-sm">Live data updates and WebSocket events</li>
+              <li class="body-sm">AI-assisted expert matching</li>
+              <li class="body-sm">Multi-language support</li>
             </ul>
           </div>
         </div>
@@ -347,11 +338,14 @@
     </section>
 
   </div>
+
+  <!-- 9. FOOTER -->
   <footer class="footer">
     <div class="container">
-      <p>Expert Portal — Product Concept Demo &middot; Not a production application &middot; All data is illustrative</p>
+      <p>Expert Portal &mdash; Product concept demo. Static HTML + CSS. No build system required.</p>
     </div>
   </footer>
+
 </div>
 </body>
 </html>

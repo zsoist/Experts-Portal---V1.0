@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Expert Record — Maria Fischer — Expert Portal</title>
-  <meta name="description" content="Expert detail record — verification state, compliance posture, and payment status."/>
+  <title>Maria Fischer — Expert Detail (Ops) — Expert Portal</title>
+  <meta name="description" content="Operational detail record for Maria Fischer — verification, compliance, opportunities, payments, and audit trail."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -28,118 +28,177 @@
         <li><a href="/Experts-Portal---V1.0/profile/" class="nav-link">Profile</a></li>
         <li><a href="/Experts-Portal---V1.0/availability/" class="nav-link">Availability</a></li>
         <li><a href="/Experts-Portal---V1.0/projects/" class="nav-link">Pipeline</a></li>
-        <li><a href="/Experts-Portal---V1.0/ops-demo/" class="nav-link active">Ops View</a></li>
+        <li><a href="/Experts-Portal---V1.0/ops-demo/" class="nav-link active">Ops Demo</a></li>
       </ul>
     </div>
   </nav>
   <div class="page-content">
     <div class="container">
 
-      <a href="/Experts-Portal---V1.0/ops-demo/" class="btn btn-ghost btn-sm mb-lg">&larr; Back to ops dashboard</a>
-
-      <div class="ops-header mb-xl">
+      <!-- Ops Header -->
+      <div class="ops-header">
         <div class="flex items-center justify-between flex-wrap gap-md">
           <div>
-            <p class="label" style="color: var(--ops-accent);">Expert Detail Record</p>
-            <h2 class="mt-sm">Expert Record &mdash; Maria Fischer</h2>
-            <p class="body-sm mt-sm">Review verification state, compliance posture, and payment status</p>
+            <p class="label" style="color: var(--ops-accent);">EXPERT RECORD</p>
+            <h2 class="mt-sm">Maria Fischer</h2>
+            <p class="subtitle mt-sm">Former VP Revenue Operations, B2B SaaS</p>
           </div>
-          <div class="flex gap-sm flex-wrap">
-            <span class="badge badge-ops">ops_admin</span>
+          <span class="badge badge-ops">Expert ID: 4dd4d84f</span>
+        </div>
+      </div>
+
+      <!-- Back link -->
+      <div class="mb-xl">
+        <a href="/Experts-Portal---V1.0/ops-demo/" class="btn btn-ghost btn-sm">&larr; Back to ops dashboard</a>
+      </div>
+
+      <!-- Expert Summary -->
+      <div class="section-header">
+        <p class="label" style="color: var(--ops-accent);">EXPERT SUMMARY</p>
+      </div>
+      <div class="grid-2 mb-xl">
+        <!-- Left: Profile data -->
+        <div class="card">
+          <h4 class="mb-md">Profile</h4>
+          <div class="data-row">
+            <span class="data-row-label">Email</span>
+            <span class="data-row-value">m.fischer@example.com</span>
+          </div>
+          <div class="data-row">
+            <span class="data-row-label">Timezone</span>
+            <span class="data-row-value">Europe/Berlin (CET)</span>
+          </div>
+          <div class="data-row">
+            <span class="data-row-label">Status</span>
+            <div class="flex items-center gap-sm">
+              <span class="status-dot status-dot-success"></span>
+              <span class="data-row-value">Active</span>
+            </div>
+          </div>
+          <div class="data-row">
+            <span class="data-row-label">Verification</span>
+            <div class="flex items-center gap-sm">
+              <span class="status-dot status-dot-success"></span>
+              <span class="data-row-value">Completed</span>
+            </div>
+          </div>
+          <div class="data-row">
+            <span class="data-row-label">Last confirmed</span>
+            <span class="data-row-value">March 9, 2026</span>
+          </div>
+        </div>
+        <!-- Right: Expertise & Role History -->
+        <div class="card">
+          <h4 class="mb-md">Expertise</h4>
+          <div class="flex flex-wrap gap-sm mb-lg">
+            <span class="tag">Revenue Operations</span>
+            <span class="tag">Quote-to-Cash</span>
+            <span class="tag">Pricing Strategy</span>
+            <span class="tag">B2B SaaS</span>
+            <span class="tag">Sales Process Design</span>
+            <span class="tag">CRM Architecture</span>
+          </div>
+          <h4 class="mb-md">Role History</h4>
+          <div class="data-row">
+            <span class="data-row-label">VP Revenue Operations</span>
+            <span class="data-row-value body-sm">Series C SaaS, 2021&ndash;2025</span>
+          </div>
+          <div class="data-row">
+            <span class="data-row-label">Director Sales Ops</span>
+            <span class="data-row-value body-sm">Enterprise SaaS, 2018&ndash;2021</span>
           </div>
         </div>
       </div>
 
-      <div class="grid-2-1">
-        <div>
-          <div class="card card-ops mb-md">
-            <p class="label mb-md" style="color: var(--ops-accent);">Expert summary</p>
-            <h3 class="mb-sm">Maria Fischer</h3>
-            <p class="body-sm mb-md">Former VP of Revenue Operations, B2B SaaS</p>
-            <div class="flex gap-sm flex-wrap mb-lg">
-              <span class="badge badge-accent badge-dot">Active</span>
-              <span class="badge badge-success badge-dot">Verification completed</span>
-            </div>
-
-            <h4 class="mb-sm">Verification Details</h4>
-            <div class="data-row">
-              <span class="data-row-label">Method</span>
-              <span class="data-row-value">Government ID via Persona</span>
-            </div>
-            <div class="data-row">
-              <span class="data-row-label">Status</span>
-              <div class="flex items-center gap-sm">
-                <span class="status-dot status-dot-success"></span>
-                <span class="data-row-value">Completed</span>
-              </div>
-            </div>
-            <div class="data-row">
-              <span class="data-row-label">Last confirmed</span>
-              <span class="data-row-value">March 9, 2026</span>
-            </div>
-
-            <div class="sep"></div>
-
-            <h4 class="mb-md">Recency Signals</h4>
-            <div class="mb-md">
-              <span class="body-sm" style="color: var(--text-primary); font-weight: 500;">Quote-to-cash redesign</span>
-              <p class="body-xs mb-sm mt-xs">Last hands-on: December 14, 2025</p>
-              <div class="confidence-bar">
-                <div class="progress-bar">
-                  <div class="progress-fill" style="width: 95%;"></div>
-                </div>
-                <span class="confidence-value">95%</span>
-              </div>
-            </div>
-            <div class="mb-md">
-              <span class="body-sm" style="color: var(--text-primary); font-weight: 500;">Pricing committee governance</span>
-              <p class="body-xs mb-sm mt-xs">Last hands-on: August 31, 2025</p>
-              <div class="confidence-bar">
-                <div class="progress-bar">
-                  <div class="progress-fill" style="width: 83%;"></div>
-                </div>
-                <span class="confidence-value">83%</span>
-              </div>
-            </div>
+      <!-- Compliance Status -->
+      <div class="section-header">
+        <p class="label" style="color: var(--ops-accent);">COMPLIANCE STATUS</p>
+      </div>
+      <div class="card card-ops mb-xl">
+        <div class="data-row">
+          <span class="data-row-label">Attestation</span>
+          <div class="flex items-center gap-sm">
+            <span class="status-dot status-dot-warning"></span>
+            <span class="data-row-value" style="color: var(--warning);">Pending</span>
           </div>
         </div>
+        <div class="data-row">
+          <span class="data-row-label">Employer restrictions</span>
+          <span class="data-row-value">None flagged</span>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Scheduling</span>
+          <span class="data-row-value" style="color: var(--warning);">Blocked pending attestation</span>
+        </div>
+      </div>
 
-        <div>
-          <div class="card card-ops mb-md">
-            <h4 class="mb-md">Finance Queue</h4>
-            <div class="data-row">
-              <div>
-                <span class="data-row-label" style="display: block; margin-bottom: 4px;">Pricing org design consultation</span>
-                <span class="body-xs">Due: March 20, 2026</span>
-              </div>
-              <div class="flex items-center gap-sm">
-                <span class="data-row-value">$500</span>
-                <span class="badge badge-warning badge-dot">Pending</span>
-              </div>
-            </div>
-            <div class="data-row">
-              <div>
-                <span class="data-row-label" style="display: block; margin-bottom: 4px;">RevOps maturity assessment</span>
-                <span class="body-xs">Completed: February 10, 2026</span>
-              </div>
-              <div class="flex items-center gap-sm">
-                <span class="data-row-value">$450</span>
-                <span class="badge badge-success badge-dot">Paid</span>
-              </div>
-            </div>
+      <!-- Opportunity Activity -->
+      <div class="section-header">
+        <p class="label" style="color: var(--ops-accent);">OPPORTUNITY ACTIVITY</p>
+        <h3 class="mt-sm">Linked opportunities</h3>
+      </div>
+      <div class="card mb-xl">
+        <div class="data-row">
+          <span class="data-row-label">Revenue operations maturity in vertical SaaS</span>
+          <div class="flex items-center gap-sm">
+            <span class="badge badge-success badge-dot">Accepted</span>
+            <span class="body-xs">March 10, 2026</span>
           </div>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">Pricing committee governance for mid-market</span>
+          <div class="flex items-center gap-sm">
+            <span class="badge badge-accent badge-dot">In review</span>
+            <span class="body-xs">March 8, 2026</span>
+          </div>
+        </div>
+      </div>
 
-          <div class="card card-ops">
-            <h4 class="mb-md">Audit Trail</h4>
-            <div class="audit-item">
-              <span class="audit-time">2026-03-09 14:32</span>
-              <span class="audit-event"><code>expert.profile.updated</code> &mdash; Profile headline and expertise tags updated</span>
-            </div>
-            <div class="audit-item">
-              <span class="audit-time">2026-03-10 09:15</span>
-              <span class="audit-event"><code>opportunity.accepted</code> &mdash; Accepted invitation for RevOps maturity consultation</span>
-            </div>
+      <!-- Payment History -->
+      <div class="section-header">
+        <p class="label" style="color: var(--ops-accent);">PAYMENT HISTORY</p>
+        <h3 class="mt-sm">Payment records</h3>
+      </div>
+      <div class="card mb-xl">
+        <div class="data-row">
+          <span class="data-row-label">$500 &mdash; RevOps consultation</span>
+          <div class="flex items-center gap-sm">
+            <span class="status-dot status-dot-warning"></span>
+            <span class="data-row-value" style="color: var(--warning);">Pending request</span>
+            <span class="body-xs">Due March 20, 2026</span>
           </div>
+        </div>
+        <div class="data-row">
+          <span class="data-row-label">$450 &mdash; Pricing strategy session</span>
+          <div class="flex items-center gap-sm">
+            <span class="status-dot status-dot-success"></span>
+            <span class="data-row-value">Paid</span>
+            <span class="body-xs">February 10, 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Audit Trail -->
+      <div class="section-header">
+        <p class="label" style="color: var(--ops-accent);">AUDIT TRAIL</p>
+        <h3 class="mt-sm">Expert activity log</h3>
+      </div>
+      <div class="card mb-xl">
+        <div class="audit-item">
+          <span class="audit-time">2026-03-10 11:40</span>
+          <span class="audit-event"><code>compliance.attestation_pending</code> &mdash; Attestation request generated; scheduling blocked</span>
+        </div>
+        <div class="audit-item">
+          <span class="audit-time">2026-03-10 09:15</span>
+          <span class="audit-event"><code>opportunity.accepted</code> &mdash; Accepted invitation for &ldquo;Revenue operations maturity in vertical SaaS&rdquo;</span>
+        </div>
+        <div class="audit-item">
+          <span class="audit-time">2026-03-10 08:30</span>
+          <span class="audit-event"><code>verification.completed</code> &mdash; Persona identity verification completed</span>
+        </div>
+        <div class="audit-item">
+          <span class="audit-time">2026-03-09 14:32</span>
+          <span class="audit-event"><code>expert.profile.updated</code> &mdash; Updated profile headline and expertise tags</span>
         </div>
       </div>
 
@@ -147,7 +206,7 @@
   </div>
   <footer class="footer">
     <div class="container">
-      <p>Expert Portal — Product Concept Demo &middot; Not a production application &middot; All data is illustrative</p>
+      <p>Expert Portal &mdash; Product concept demo.</p>
     </div>
   </footer>
 </div>
