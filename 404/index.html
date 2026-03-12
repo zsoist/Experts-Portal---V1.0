@@ -3,50 +3,50 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>404 — Expert Portal</title>
-  <meta name="robots" content="noindex"/>
+  <title>Page Not Found — Expert Portal</title>
+  <meta name="description" content="The page you are looking for does not exist."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/Experts-Portal---V1.0/assets/style.css"/>
 </head>
 <body>
-  <div class="page-wrapper">
-
-    <nav class="nav">
-      <div class="container">
-        <a href="/Experts-Portal---V1.0/" class="nav-brand">
-          <span class="brand-dot"></span> Expert Portal
-        </a>
-        <ul class="nav-links">
-          <li><a href="/Experts-Portal---V1.0/" class="nav-link">Overview</a></li>
-          <li><a href="/Experts-Portal---V1.0/workspace/" class="nav-link">Workspace</a></li>
-          <li><a href="/Experts-Portal---V1.0/profile/" class="nav-link">Profile</a></li>
-          <li><a href="/Experts-Portal---V1.0/availability/" class="nav-link">Availability</a></li>
-          <li><a href="/Experts-Portal---V1.0/projects/" class="nav-link">Projects</a></li>
-          <li><a href="/Experts-Portal---V1.0/ops-demo/" class="nav-link">Ops Demo</a></li>
-        </ul>
+<div class="page-wrapper">
+  <nav class="nav">
+    <div class="container">
+      <a href="/Experts-Portal---V1.0/" class="nav-brand">
+        <span class="brand-dot"></span>
+        Expert Portal
         <span class="nav-demo-badge">Concept Demo</span>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle navigation">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="/Experts-Portal---V1.0/" class="nav-link">Overview</a></li>
+        <li><a href="/Experts-Portal---V1.0/workspace/" class="nav-link">Workspace</a></li>
+        <li><a href="/Experts-Portal---V1.0/profile/" class="nav-link">Profile</a></li>
+        <li><a href="/Experts-Portal---V1.0/availability/" class="nav-link">Availability</a></li>
+        <li><a href="/Experts-Portal---V1.0/projects/" class="nav-link">Pipeline</a></li>
+        <li><a href="/Experts-Portal---V1.0/ops-demo/" class="nav-link">Ops Demo</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="page-content">
+    <div class="container">
+      <div class="text-center" style="padding: var(--space-4xl) 0;">
+        <p class="label label-accent mb-sm">404</p>
+        <h1>Page not found</h1>
+        <p class="subtitle mx-auto mt-md mb-xl">The page you are looking for does not exist or has been moved.</p>
+        <a href="/Experts-Portal---V1.0/" class="btn btn-primary">Back to homepage</a>
       </div>
-    </nav>
-
-    <main class="page-content">
-      <div class="container" style="display:flex;align-items:center;justify-content:center;min-height:60vh;text-align:center;">
-        <div>
-          <p class="label label-accent mb-sm">404</p>
-          <h1>Page not found</h1>
-          <p class="subtitle mx-auto mt-md mb-xl">The page you are looking for does not exist or has been moved.</p>
-          <a href="/Experts-Portal---V1.0/" class="btn btn-primary">Back to overview</a>
-        </div>
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="container">
-        <p>Expert Portal — Product concept demo. Static HTML + CSS. No build system required.</p>
-      </div>
-    </footer>
-
+    </div>
   </div>
+  <footer class="footer">
+    <div class="container">
+      <p>Expert Portal &mdash; Product concept demo.</p>
+    </div>
+  </footer>
+</div>
 </body>
 </html>
